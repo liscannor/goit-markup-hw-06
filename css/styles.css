@@ -554,18 +554,18 @@ footer .logo-text {
   margin-right: 120px;
 }
 
-.social-text {
-  margin-bottom: 16px;
-}
-
 .footer .logo {
   display: block;
   margin-bottom: 16px;
 }
 
-.social-text {
+/* footer-social */
+
+.social-text,
+.contact-text {
   font-weight: 500;
   color: #ffffff;
+  margin-bottom: 16px;
 }
 
 .footer-link {
@@ -576,6 +576,57 @@ footer .logo-text {
 .footer-link:hover,
 .footer-link:focus {
   background-color: var(--accent-hover-color);
+}
+
+/* footer-contact */
+
+.contact-content {
+  margin-left: 80px;
+  margin-right: 156px;
+}
+
+.contact-form {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.contact-input {
+  width: 264px;
+  height: 40px;
+  padding: 8px 24px;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  outline: none;
+}
+
+.contact-label {
+  border: none;
+}
+
+.contact-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+  padding: 8px 24px;
+}
+
+.btn-text {
+  display: inline-block;
+}
+
+.contact-icon {
+  fill: var(--primary-bg-color);
 }
 
 /* modal */
@@ -601,6 +652,7 @@ footer .logo-text {
   position: absolute;
   top: 50%;
   left: 50%;
+  padding: 24px;
   /* z-index: 10; */
   transform: translateX(-50%) translateY(-50%);
   width: 408px;
@@ -615,6 +667,9 @@ footer .logo-text {
 .backdrop.is-hidden .modal {
   transform: translateX(-50%) translateY(0%);
   opacity: 0;
+}
+.close-btn-thumb {
+  padding: 24px;
 }
 
 .modal-button {
@@ -631,4 +686,127 @@ footer .logo-text {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+/* modal-form */
+
+.modal-title {
+  display: block;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.modal-form-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--border-color);
+}
+
+.modal-form-group {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.modal-form-field {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 8px 38px;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  outline: transparent;
+  transition: border-color var(--anim-fast), box-shadow var(--anim-fast);
+}
+
+.modal-form-field:focus,
+.modal-form-comment:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  fill: var(--title-text-color);
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: fill var(--anim-fast);
+}
+
+.modal-form-field:focus + .modal-form-icon {
+  fill: var(--accent-color);
+}
+
+.modal-form-comment {
+  display: block;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  outline: transparent;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  transition: border-color var(--anim-fast), box-shadow var(--anim-fast);
+  resize: none;
+}
+
+/* .modal-form-comment:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} */
+
+.modal-form-agreemant {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.modal-form-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid var(--title-text-color);
+  border-radius: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z' fill='%23F4F4FD'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color var(--anim-fast), border-color var(--anim-fast);
+}
+
+.modal-form-checkbox:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.modal-form-desc {
+  display: block;
+  user-select: none;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #757575;
+}
+
+.modal-form-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.modal-form-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
